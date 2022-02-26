@@ -14,9 +14,11 @@ namespace FirstMVCDemo.Controllers
         public ActionResult Index()
         {
             EmployeeBusinessLayer employeeBL = new EmployeeBusinessLayer();
-            Employee employee = employeeBL.GetEmployeeDetails(102);
-            ViewData["Employee"] = employee;
-            ViewData["Header"] = "Employee Details ";
+            Employee employee = employeeBL.GetEmployeeDetails(101);
+
+            ViewBag.Employee = employee;
+            ViewBag.Header = "Employee Details";
+
             return View();
         }
 

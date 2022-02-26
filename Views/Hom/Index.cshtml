@@ -6,38 +6,37 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Page Title</title>
-    </h    @{
-        var employee = ViewData["Employee"]    //typecasting
-            as FirstMVCDemo.Models.Employee;
+</head>
+<body>
+    @{
+        var employee = ViewBag.Employee;
     }
-    <h2>@ViewData["Header"]</h2>
-    <body>
-
-        <table style="font-family:Arial">
-            <tr>
-                <td>Employee ID:</td>
-                <td>@employee.EmployeeId </td>
-            </tr>
-            <tr>
-                <td>Name:</td>
-                <td>@employee.Name</td>
-            </tr>
-            <tr>
-                <td>Gender:</td>
-                <td>@employee.Gender</td>
-            </tr>
-            <tr>
-                <td>City:</td>
-                <td>@employee.City</td>
-            </tr>
-            <tr>
-                <td>Salary:</td>
-                <td>@employee.Salary</td>
-            </tr>
-            <tr>
-                <td>Address:</td>
-                <td>@employee.Address</td>
-            </tr>
-        </table>
-    </body>
+    <h2>@ViewBag.Header</h2>
+    <table style="font-family:Arial">
+        <tr>
+            <td>Employee ID:</td>
+            <td>@employee.EmployeeId </td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td>@employee.Name</td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td>@employee.Gender</td>
+        </tr>
+        <tr>
+            <td>City:</td>
+            <td>@employee.City</td>
+        </tr>
+        <tr>
+            <td>Salary:</td>
+            <td>@employee.Salary</td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td>@employee.Address</td>
+        </tr>
+    </table>
+</body>
 </html>

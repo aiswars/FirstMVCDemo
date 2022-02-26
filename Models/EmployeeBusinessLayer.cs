@@ -15,10 +15,10 @@ namespace FirstMVCDemo.Models
             //the data from a database
             Employee employee = new Employee()
             {
-                EmployeeId = EmployeeId,
-                Name = "Ais",
+                EmployeeId = EmployeeId,  // 101 -- Employee employee = employeeBL.GetEmployeeDetails(101);
+                Name = "Aish",
                 Gender = "Female",
-                City = "Bangalore",
+                City = "Bengaluru",
                 Salary = 1000,
                 Address = "KA"
             };

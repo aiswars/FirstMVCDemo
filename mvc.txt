@@ -139,6 +139,35 @@ City:	Bangalore
 Salary:	1000
 Address:	KA
 
+-----------------------------------------------------------------------------------
+ViewBag - display Model data to Views
+------------------------------------
+ ViewBag is a dynamic property (a new feature introduced in C# 4.0). Dynamic data type means at runtime based on the value,
+ it will decide the data type. 
+ 
+ In Controller/HomCOntroller.cs/ Index() in HomController.cs
+        ViewBag.Employee = employee;
+        ViewBag.Header = "Employee Details";
+        
+In Views/Hom/ Index.cshtml >>>>>>  it is mandatory to typecast explicitly to the actual type if you are accessing data other than the string type.
+   @{
+        var employee = ViewBag.Employee;
+    }
+    <h2>@ViewBag.Header</h2>
+    <table style="font-family:Arial">
+        <tr>
+            <td>Employee ID:</td>
+            <td>@employee.EmployeeId </td>
+        </tr>
 
 
+        https://localhost:xxxxx/Hom/Index  >>> 
+Employee Details
+Employee ID:	101    // 101 -- Employee employee = employeeBL.GetEmployeeDetails(101);
+Name:	Aish
+Gender:	Female
+City:	Bengaluru
+Salary:	1000
+Address:	KA
+---------------------------------------------------------------------------------------------------------------------------------
 
