@@ -25,3 +25,11 @@ change Index() method in the HomeController.cs  >>id in url>> Index(int)
         Now only this will work >> url with any idvalue >> http://localhost:xxxx/Home/Index/10  >>> The value of Id = 0 --- else error as Index() method is expecting a int value.
         
 --------------------------------------------- ----------------------------------------------
+change Index() method in the HomeController.cs  >> id and name in url>> Index(int) 
+
+        public string Index(string id, string name)
+        {
+            return "The value of  Id = " + id + " and Name = " + name;
+        }
+
+        url>>http://localhost:xxxx/Home/Index/1001?name=ais  >>> The value of Id = 110 and Name = ais   OR http://localhost:xxxx
