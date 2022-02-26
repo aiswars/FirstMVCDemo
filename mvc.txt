@@ -34,8 +34,6 @@ change Index() method in the HomeController.cs  >> id and name in url>> Index(in
 
         url>>http://localhost:xxxx/Home/Index/1001?name=ais  >>> The value of Id = 110 and Name = ais   OR http://localhost:xxxx
 
-
-
 --------------------------------------------------------------------------------------------
 
 use the “Request.QueryString” to retrieve the query string parameter 
