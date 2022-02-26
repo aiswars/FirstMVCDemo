@@ -9,9 +9,10 @@ namespace FirstMVCDemo.Controllers
     public class HomController : Controller
     {
         // GET: Hom
-        public string Index(string id, string name)
+        public string Index(int id)
         {
-            return "The value of  Id = " + id + " and Name = " + name;
+            return "The value of  Id = " + id;
         }
+
     }
 }
