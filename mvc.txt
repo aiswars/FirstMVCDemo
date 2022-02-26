@@ -1,9 +1,11 @@
 NewProject>> select Empty >> check mVC >> 
 Controllers >> Rigth click>> Add COntroller>> give name --HomeController.cs in Controllers folder
+-------------------------------------------------------------------------------------------------------
 Run>> error>> as no view for Index()action method in Views Folder. Index.csHtml has to be there in Views Folder
 views has to be there in Views folder with the names of Action methods of controllers classes.
 HomeController.cs has Index() action method -- hence Index.cshtml file should be there in Views Folder inside a folder 
 with Controller class file name -- Index.cshtml in Hom folder in Views folder -- here no Index.cshtml
+-------------------------------------------------------------------------------------------------------
 
 for timebeing, in HomeController.cs classfile changed the return type ActionResult to String and returend a Stirng "Hello MVC 5 Application".. Run
 
@@ -14,6 +16,10 @@ In the URL “Home” is the name of the controller and “Index” is the name of the a
 the mapping is defined within the RegisterRoutes() method of the RouteConfig class which is in App_Start
 In RegisterRoutes() method of RouteConfig.cs class id is optional so http://localhost:xxxx/Home/Index 
 OR http://localhost:xxxx/Home/Index/10 will work.
+
+http://localhost:xxxx/Home/Index
+http://localhost:xxxx/Home
+http://localhost:xxxx
 ----------------------------------------------------------------------
 
 change Index() method in the HomeController.cs  >>id in url>> Index(int)
@@ -43,7 +49,9 @@ public string Index(string id, string name)
             return "Id = " + id + " ,Name = " + Request.QueryString["name"];
         }
 
+        url>>http://localhost:xxxx/Home/Index/1001?name=ais  >>> Id = 10 ,Name = ais
 
+----------------------------------------------------------------------------------------------------
 
 
 
