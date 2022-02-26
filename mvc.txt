@@ -170,4 +170,57 @@ City:	Bengaluru
 Salary:	1000
 Address:	KA
 ---------------------------------------------------------------------------------------------------------------------------------
+Creating Strongly Typed View using ViewBag
+---------------------------
+In order to create a strongly typed view in ASP.NET MVC application, we need to pass the model object as a parameter to the View() extension method.
+
+to specify the model type within the view by using the @model directive.
+
+@model FirstMVCDemo.Models.Employee in Index.cshtml
+
+The above statement will tell that we are going to use FirstMVCDemo.Models.Employee as the model for this view. 
+Here in the directive (@model), the letter m is in lowercase and the statement should not be terminated with the semicolon.
+
+Then we can access the model properties simply by using @Model, here the letter M is in uppercase.
+So, in our example, we can access the Employee object properties such as Name, Gender, City, Salary, etc. 
+by using @Model.Name, @Model.Gender, @Model.City, and @Model.Salary respectively.
+
+ In Controller/HomCOntroller.cs/ Index() in HomController.cs
+         ViewBag.Header = "Employee Details";
+
+In Views/Hom/ Index.cshtml >>>>>> 
+        @model FirstMVCDemo.Models.Employee
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta name="viewport" content="width=device-width" />
+            <title>Page Title</title>
+        </head>
+        <body>
+            <h2>@ViewBag.Header</h2>
+            <table style="font-family:Arial">
+                <tr>
+                    <td>Employee ID:</td>
+                    <td>@Model.EmployeeId </td>
+
+ https://localhost:xxxxxx/Hom/Index
+
+
+ ---------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

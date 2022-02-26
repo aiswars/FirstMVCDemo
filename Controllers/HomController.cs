@@ -15,11 +15,9 @@ namespace FirstMVCDemo.Controllers
         {
             EmployeeBusinessLayer employeeBL = new EmployeeBusinessLayer();
             Employee employee = employeeBL.GetEmployeeDetails(101);
-
-            ViewBag.Employee = employee;
             ViewBag.Header = "Employee Details";
 
-            return View();
+            return View(employee);
         }
 
     }
