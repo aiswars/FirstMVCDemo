@@ -98,6 +98,8 @@ public static void RegisterRoutes(RouteCollection routes)
             );
 
 -----------------------------------------------------------------------------------
+ways to transfer the data from a Controller action method to a View
+
 to display the EMployee data set in EmployeeBusinessLayer.cs -- need to pass the model data from the controller to a view. 
 here data in EmployeeBusinessLayer.cs file in Models folder has to be passed to a view.
 
@@ -109,14 +111,15 @@ TempData,
 Storngly typed Data
 
 ----------------------------------------------------------------------------------------------------
-
+ViewData - display Model data to Views
+-----------------------------------------
 In Controller/HomCOntroller.cs/ Index() in HomController.cs
         ViewData["Employee"] = employee;
         ViewData["Header"] = "Employee Details";
         
-In Views/Hom/ Index.cshtml 
+In Views/Hom/ Index.cshtml >>>>>>  it is mandatory to typecast explicitly to the actual type if you are accessing data other than the string type.
          @{
-        var employee = ViewData["Employee"]
+        var employee = ViewData["Employee"]  //typecasting
             as FirstMVCDemo.Models.Employee;
     }
     <h2>@ViewData["Header"]</h2>
@@ -126,4 +129,16 @@ In Views/Hom/ Index.cshtml
                 <td>@employee.EmployeeId </td>
             </tr>
 
------------------------------------------------------------------------------------
+
+            https://localhost:xxxxxxx/  >>>> 
+Employee Details
+Employee ID:	102
+Name:	Ais
+Gender:	Female
+City:	Bangalore
+Salary:	1000
+Address:	KA
+
+
+
+

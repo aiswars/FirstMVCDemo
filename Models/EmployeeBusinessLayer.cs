@@ -16,11 +16,11 @@ namespace FirstMVCDemo.Models
             Employee employee = new Employee()
             {
                 EmployeeId = EmployeeId,
-                Name = "Pranaya",
-                Gender = "Male",
-                City = "Mumbai",
+                Name = "Ais",
+                Gender = "Female",
+                City = "Bangalore",
                 Salary = 1000,
-                Address = "Andheri"
+                Address = "KA"
             };
             return employee;
         }

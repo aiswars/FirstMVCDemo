@@ -16,7 +16,7 @@ namespace FirstMVCDemo.Controllers
             EmployeeBusinessLayer employeeBL = new EmployeeBusinessLayer();
             Employee employee = employeeBL.GetEmployeeDetails(102);
             ViewData["Employee"] = employee;
-            ViewData["Header"] = "Employee Details";
+            ViewData["Header"] = "Employee Details ";
             return View();
         }
 
