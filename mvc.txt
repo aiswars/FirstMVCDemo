@@ -64,9 +64,48 @@ Index.cshtml is created in Views/Hom/Index.cshtml
 <h1> added in Index.cshtml
 https://localhost:xxxxx/  >> Index View Coming From Views/Home - Hom Folder
 
+------------------------------------------------------------------------------------------------------------
 
+Adding Models -- Models folder
+-----------------------------
+Right click Models > New Item > Visual C#> Class> Employee.cs
+Add property in this class -- press tab twice
 
+in order to manage the employee data i.e. to perform the CRUD operation on the employee add another model class--EmployeeBusinessLayer.cs
 
+Employee.cs  -- to store employee data
+EmployeeBusinessLayer.cs >> GetEmployeeDetails() -- to work on the employee data >>> 2 classes in Models folder
 
+Now modify the HomeController class as shown below to use the Employee and EmployeeBusinessLayer model to retrieve the employee data.
+Add >> using FirstMVCDemo.Models; in HomController.cs
+public ActionResult Index(int id)
+        {
+            EmployeeBusinessLayer employeeBL = new EmployeeBusinessLayer();
+            Employee employee = employeeBL.GetEmployeeDetails(id);
+            return View();
+        }
+------------------------------------------------------------------------------------------
+But as the router is set by default to Index.cshtml ony that will display in the browser. 
+url >> https://localhost:xxxxx/Hom/Index/1001  >>>  Index View Coming From Views/Home - Hom Folder
+public static void RegisterRoutes(RouteCollection routes)
+        {
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Hom", action = "Index", id = UrlParameter.Optional }
+            );
 
+-----------------------------------------------------------------------------------
+to display the EMployee data set in EmployeeBusinessLayer.cs -- need to pass the model data from the controller to a view. 
+here data in EmployeeBusinessLayer.cs file in Models folder has to be passed to a view.
+
+there are many ways to pass the model data from a controller to a view.>>>> 
+ViewData, 
+ViewBag, 
+ViewModel, 
+TempData, 
+Storngly typed Data
+
+----------------------------------------------------------------------------------------------------
