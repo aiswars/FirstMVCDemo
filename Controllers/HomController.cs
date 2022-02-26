@@ -10,11 +10,9 @@ namespace FirstMVCDemo.Controllers
     {
         // GET: Hom
 
-        public string Index(string id, string name)
-
-
+        public ActionResult Index()
         {
-            return "Id = " + id + " ,Name = " + Request.QueryString["name"];
+            return View();
         }
 
     }

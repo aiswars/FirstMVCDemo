@@ -2,9 +2,13 @@ NewProject>> select Empty >> check mVC >>
 Controllers >> Rigth click>> Add COntroller>> give name --HomeController.cs in Controllers folder
 -------------------------------------------------------------------------------------------------------
 Run>> error>> as no view for Index()action method in Views Folder. Index.csHtml has to be there in Views Folder
+ MVC Framework will look for a file with the name Index.aspx or Index.ascx within the Hom and Shared folder of the application.
+ If the requested view file is found in any of the above locations, then the View generates the necessary HTML and sends the generated HTML back to the client who initially made the request.
 views has to be there in Views folder with the names of Action methods of controllers classes.
 HomeController.cs has Index() action method -- hence Index.cshtml file should be there in Views Folder inside a folder 
 with Controller class file name -- Index.cshtml in Hom folder in Views folder -- here no Index.cshtml
+
+In Views folder >> Home  Folder is going to contain all the view files(acion methods) (i.e. cshtml files) which are specific to HomeController. 
 -------------------------------------------------------------------------------------------------------
 
 for timebeing, in HomeController.cs classfile changed the return type ActionResult to String and returend a Stirng "Hello MVC 5 Application".. Run
@@ -53,8 +57,10 @@ public string Index(string id, string name)
 
 ----------------------------------------------------------------------------------------------------
 
-
-
+Addin Views in Views Folder 
+--------------------------
+Rightclick the action method in COntroller cs classfile>> Add View
+Index.cshtml is created in Views/Hom/Index.cshtml
 
 
 
