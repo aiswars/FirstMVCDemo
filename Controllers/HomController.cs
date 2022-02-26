@@ -11,10 +11,12 @@ namespace FirstMVCDemo.Controllers
     {
         // GET: Hom
 
-        public ActionResult Index(int id)
+        public ActionResult Index()
         {
             EmployeeBusinessLayer employeeBL = new EmployeeBusinessLayer();
-            Employee employee = employeeBL.GetEmployeeDetails(id);
+            Employee employee = employeeBL.GetEmployeeDetails(102);
+            ViewData["Employee"] = employee;
+            ViewData["Header"] = "Employee Details";
             return View();
         }
 

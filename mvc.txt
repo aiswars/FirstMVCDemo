@@ -109,3 +109,21 @@ TempData,
 Storngly typed Data
 
 ----------------------------------------------------------------------------------------------------
+
+In Controller/HomCOntroller.cs/ Index() in HomController.cs
+        ViewData["Employee"] = employee;
+        ViewData["Header"] = "Employee Details";
+        
+In Views/Hom/ Index.cshtml 
+         @{
+        var employee = ViewData["Employee"]
+            as FirstMVCDemo.Models.Employee;
+    }
+    <h2>@ViewData["Header"]</h2>
+    ...............................
+      <tr>
+                <td>Employee ID:</td>
+                <td>@employee.EmployeeId </td>
+            </tr>
+
+-----------------------------------------------------------------------------------
