@@ -18,9 +18,9 @@ namespace FirstMVCDemo.Models
                 EmployeeId = EmployeeId,  // 101 -- Employee employee = employeeBL.GetEmployeeDetails(101);
                 Name = "Aish",
                 Gender = "Female",
-                City = "Bengaluru",
+              //  City = "Bengaluru",
                 Salary = 1000,
-                Address = "KA"
+             //   Address = "KA"
             };
             return employee;
         }

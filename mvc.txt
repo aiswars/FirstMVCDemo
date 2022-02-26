@@ -207,15 +207,84 @@ In Views/Hom/ Index.cshtml >>>>>>
 
 
  ---------------------------------------------------------------------------------------------------------------------------
+ ViewModel - display different Model data to a View - data from mulitiple Models displaying to a View
+ --------------------------------------------------
+
+ a view may require different model data. Then use the concept ViewModel
+
+ In Models Folder:
+     Added a new cs file >> Address.cs 
+     Employee.cs is changed>> Employee.cs
+
+ create all the View Models within a special folder called ViewModels.
+ create a folder with the name ViewModels
+ In ViewModels folder:
+ Create a class file EmployeeDetailsViewModel.cs in ViewModels folder
+  
+  In EmployeeDetailsViewModel.cs classfile --- add using FirstMVCDemo.Models;
+        public Employee Employee { get; set; }   //object of Employee.cs model
+        public Address Address { get; set; }     //object of Address.cs model
+        public string PageTitle { get; set; }    //variable PageTitle
+        public string PageHeader { get; set; }   //variable PageHeader
+
+  EmployeeDetailsViewModel.cs >>> the word Employee represents the Controller name, 
+                                  the word Details represent the action method name. 
+                                  As it is a view model, prefixed the word ViewModel.
+In Controllers folder:
+Creating Employee Controller -- in COntrollers folder
+
+    EmployeeController.cs >> Details() action method
+    Now add Details.cshtml view in Views folder
+
+    In EmployeeController.cs 
+     //Creating the View model
+            EmployeeDetailsViewModel employeeDetailsViewModel = new EmployeeDetailsViewModel()
+            {
+                Employee = employee,
+                Address = address,
+                PageTitle = "Employee Details Page",
+                PageHeader = "Employee Details",
+            };
+            //Pass the employeeDetailsViewModel to the view
+            return View(employeeDetailsViewModel);
+
+In Views folder:
+      added Employee folder , then added Details.cshtml view - Right click Details() in EMployeeCOntroller.cs classfile > Add View > Action
+    
+                In Details.cshtml 
+                @model FirstMVCDemo.ViewModels.EmployeeDetailsViewModel
+            @{
+                Layout = null;
+            }
+            <html xmlns="http://www.w3.org/1999/xhtml">
+            <head>
+                <title>@Model.PageTitle</title>   //from EmployeeController.cs model
+            </head>
+            <body>
+                <h1>@Model.PageHeader</h1>
 
 
 
+    For this demp EmployeeBusinesslayer and index.cshtml is not using
+    Also changed the router to Employee/Details in RouteCOnfig.cs file
+
+    url: https://localhost:xxxx/Employee/Details or https://localhost:xxxx 
 
 
+                    Employee Details
+                EmployeeID : 1
+                Name : Daksh
+                Gender : Male
+                Department : IT
+                Salary : 15000
 
+                Employee Address
+                City : Kottayam
+                State : Kerala
+                Country : India
+                Pin : 2324234
 
-
-
+    ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
