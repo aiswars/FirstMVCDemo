@@ -62,7 +62,6 @@ Addin Views in Views Folder
 Rightclick the action method in COntroller cs classfile>> Add View
 Index.cshtml is created in Views/Hom/Index.cshtml
 <h1> added in Index.cshtml
-
 https://localhost:xxxxx/  >> Index View Coming From Views/Home - Hom Folder
 
 

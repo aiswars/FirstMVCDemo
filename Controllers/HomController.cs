@@ -12,6 +12,7 @@ namespace FirstMVCDemo.Controllers
 
         public ActionResult Index()
         {
+
             return View();
         }
 
