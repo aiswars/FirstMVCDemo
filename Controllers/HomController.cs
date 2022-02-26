@@ -12,7 +12,7 @@ namespace FirstMVCDemo.Controllers
 
         public string Index(string id, string name)
         {
-            return "The value of  Id = " + id + " and Name = " + name;
+            return "Id = " + id + " ,Name = " + Request.QueryString["name"];
         }
 
     }
