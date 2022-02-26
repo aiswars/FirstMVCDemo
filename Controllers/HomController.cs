@@ -9,10 +9,9 @@ namespace FirstMVCDemo.Controllers
     public class HomController : Controller
     {
         // GET: Hom
-        // public ActionResult Index() //as no view for Index()action method in Views Folder
-        public String Index()
+        public string Index(string id, string name)
         {
-            return "Hello MVC 5 Application";
+            return "The value of  Id = " + id + " and Name = " + name;
         }
     }
 }
